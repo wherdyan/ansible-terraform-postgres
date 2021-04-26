@@ -16,6 +16,6 @@ provider "postgresql" {
   connect_timeout = 15
 }
 
-resource "postgresql_database" {
+resource "postgresql_database" "{{ DB_NAME }}" {
   name     = "{{ DB_NAME }}"
 }
