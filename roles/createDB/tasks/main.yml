@@ -1,0 +1,17 @@
+---
+# tasks file for roles/createDB
+- name: create terraform template
+  template:
+    src: create_pg_DB.tf.j2
+    dest: "{{ PROJECT_DIR }}/create_pg_DB.tf"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Apply Terraform Plan
+  terraform:
+    project_path: "{{ PROJECT_DIR }}"
+    lock: no
+    state: present
+    force_init: true
+

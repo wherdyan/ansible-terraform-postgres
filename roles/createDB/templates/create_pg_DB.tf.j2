@@ -1,0 +1,21 @@
+terraform {
+  required_providers {
+    postgresql = {
+      source = "cyrilgdn/postgresql"
+      version = "1.11.2"
+    }
+  }
+}
+provider "postgresql" {
+  host            = "{{ POSTGRES_SERVER_IP }}"
+  port            = 5432
+  database        = "postgres"
+  username        = "{{ POSTGRES_USERNAME }}"
+  password        = "{{ POSTGRES_PASSWORD }}"
+  sslmode         = "disable"
+  connect_timeout = 15
+}
+
+resource "postgresql_database" "{{ DB_NAME }}" {
+  name     = "{{ DB_NAME }}"
+}
