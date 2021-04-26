@@ -1,0 +1,7 @@
+- name: Provision Postgres DB via Terraform  
+  hosts: terraform
+  gather_facts: false
+  become: true
+
+  roles:
+    - createDB_pgdn
