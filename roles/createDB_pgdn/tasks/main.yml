@@ -1,5 +1,11 @@
 ---
 # tasks file for roles/createDB
+- name: ansible create directory
+  file:
+    path: "{{ PROJECT_DIR }}"
+    state: directory
+    mode: "u=rwx,g=rx,o=rx"
+
 - name: create terraform plan from template
   template:
     src: create_pg_DB.tf.j2
