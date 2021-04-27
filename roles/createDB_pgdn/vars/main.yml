@@ -1,6 +1,6 @@
 ---
 # vars file for roles/createDB
-PROJECT_DIR: /root/PGD/Terraform
+PROJECT_DIR: /root/PGD/Terraform2
 DB_NAME: pgdb1
 POSTGRES_SERVER_IP: 10.1.147.20
 POSTGRES_USERNAME: !vault |
